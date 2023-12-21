@@ -5,8 +5,8 @@ plugins {
 	id 'maven-publish'
 }
 
-group = 'kr.co.jandb'
-version = '0.0.1-SNAPSHOT'
+group = 'com.github.DoubleJZero'
+version = 'v0.0.1-beta'
 
 sourceCompatibility = '11'
 targetCompatibility = '11'
@@ -57,11 +57,7 @@ jar {
 
 publishing {
 	publications {
-		mavenJava(MavenPublication) {
-			groupId = 'com.github.DoubleJZero'
-			artifactId = 'msacore'
-			version = 'v0.0.1-beta'
-
+		maven(MavenPublication) {
 			from components.java
 		}
 	}
