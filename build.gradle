@@ -51,19 +51,18 @@ dependencyManagement {
 	}
 }
 
+bootJar {
+	enabled=false
+}
+
 jar {
 	enabled = true
 }
 
-afterEvaluate {
-	publishing {
-		publications {
-			maven(MavenPublication) {
-				from components.java
-				groupId = 'kr.co.jandb'
-				artifactId = 'msacore'
-				version = '0.0.5'
-			}
+publishing {
+	publications {
+		mavenJava(MavenPublication){
+			artifact jar
 		}
 	}
 }
