@@ -59,6 +59,10 @@ publishing {
 	publications {
 		maven(MavenPublication) {
 			from components.java
+
+			groupId = 'kr.co.jandb'
+			artifactId = 'msacore'
+			version = '0.0.4'
 		}
 	}
 }
