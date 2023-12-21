@@ -60,7 +60,7 @@ publishing {
 		mavenJava(MavenPublication) {
 			groupId = 'com.github.DoubleJZero'
 			artifactId = 'msacore'
-			version = '0.0.1-SNAPSHOT'
+			version = 'v0.0.1-beta'
 
 			from components.java
 		}
