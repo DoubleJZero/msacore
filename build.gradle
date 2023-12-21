@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version "${springBootVersion}"
 	id 'io.spring.dependency-management' version "${dependencyManagementVersion}"
+	id 'maven-publish'
 }
 
 group = 'kr.co.jandb'
@@ -52,4 +53,16 @@ dependencyManagement {
 
 jar {
 	enabled = true
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			groupId = 'com.github.DoubleJZero'
+			artifactId = 'msacore'
+			version = '0.0.1-SNAPSHOT'
+
+			from components.java
+		}
+	}
 }
