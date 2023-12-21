@@ -55,11 +55,6 @@ jar {
 	enabled = true
 }
 
-wrapper {
-	gradleVersion = "8.5"
-	distributionType = Wrapper.DistributionType.ALL
-}
-
 publishing {
 	publications {
 		maven(MavenPublication) {
