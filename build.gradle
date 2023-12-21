@@ -5,8 +5,8 @@ plugins {
 	id 'maven-publish'
 }
 
-group = 'com.github.DoubleJZero'
-version = 'v0.0.1-beta'
+group = 'kr.co.jandb'
+version = '0.0.1-SNAPSHOT'
 
 sourceCompatibility = '11'
 targetCompatibility = '11'
