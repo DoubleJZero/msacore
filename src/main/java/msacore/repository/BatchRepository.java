@@ -1,6 +1,5 @@
 package msacore.repository;
 
-import lombok.RequiredArgsConstructor;
 import msacore.dto.BatchDto;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
@@ -15,10 +14,13 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
  * @author JandB
  * @since 1.0
  */
-@RequiredArgsConstructor
 public class BatchRepository {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
+    public BatchRepository(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+    }
 
     public int[] batchUpdate(BatchDto<?> dto){
         return namedParameterJdbcTemplate.batchUpdate(dto.getQuery(), SqlParameterSourceUtils.createBatch(dto.getData()));
