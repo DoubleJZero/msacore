@@ -20,7 +20,7 @@ public class BatchRepository {
 
     private final NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public int[] batchUpdate(BatchDto dto){
+    public int[] batchUpdate(BatchDto<?> dto){
         return namedParameterJdbcTemplate.batchUpdate(dto.getQuery(), SqlParameterSourceUtils.createBatch(dto.getData()));
     }
 }
