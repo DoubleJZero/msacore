@@ -1,5 +1,6 @@
 package msacore.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import msacore.constant.COMMON_MESSAGE;
 import msacore.payload.Response;
 import msacore.payload.ResponseFactory;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @ControllerAdvice(annotations = RestController.class)
 @RestController
+@Slf4j
 public class CustomExceptionHandler {
 
     @ResponseStatus(HttpStatus.OK)
@@ -56,6 +58,9 @@ public class CustomExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(Exception.class)
     public Response<?> handleException(Exception e){
+        log.error("##################################################################");
+        log.error(e.getMessage());
+        log.error("##################################################################");
         return createCustomError(CustomExceptionFactory.createBusinessException(COMMON_MESSAGE.UNKNOWN));
     }
 
