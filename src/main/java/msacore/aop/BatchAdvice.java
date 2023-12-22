@@ -27,7 +27,7 @@ import java.lang.reflect.Field;
 @Component
 @Aspect
 public class BatchAdvice {
-    @Pointcut("@Annotation(msacore.annotation.BatchQuery)")
+    @Pointcut("@annotation(msacore.annotation.BatchQuery)")
     public void batchPointcut() { }
 
     @Before(value ="batchPointcut()")
