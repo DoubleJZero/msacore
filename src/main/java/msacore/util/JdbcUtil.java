@@ -62,7 +62,7 @@ public class JdbcUtil {
         for(Field field : clazz.getDeclaredFields()){
             if(field.getAnnotation(BatchIgnore.class) != null) continue;
 
-            String column = field.getAnnotation(Column.class).name() + " = : " + field.getName();
+            String column = field.getAnnotation(Column.class).name() + " = :" + field.getName();
 
             if(field.getAnnotation(BatchWhereClause.class) != null){
                 whereClause.add(column);
