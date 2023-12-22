@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author JandB
  * @since 1.0
  */
-@ControllerAdvice
-@RestController
+@ControllerAdvice(annotations = RestController.class)
 public class CustomExceptionHandler {
 
     @ResponseStatus(HttpStatus.OK)
@@ -35,13 +34,13 @@ public class CustomExceptionHandler {
         return createCustomError(cue);
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(CustomNotFoundException.class)
     public Response<?> handleException(CustomNotFoundException cnfe){
         return createCustomError(cnfe);
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
     @ExceptionHandler(CustomForbiddenException.class)
     public Response<?> handleException(CustomForbiddenException cfe){
         return createCustomError(cfe);
