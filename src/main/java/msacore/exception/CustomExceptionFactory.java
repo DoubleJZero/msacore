@@ -23,15 +23,15 @@ public class CustomExceptionFactory {
                 ce.setHttpStatus(HttpStatus.BAD_REQUEST);
                 break;
             case UNAUTHORIZED:
-                ce = new CustomBadRequestException(dm);
+                ce = new CustomUnauthorizedException(dm);
                 ce.setHttpStatus(HttpStatus.UNAUTHORIZED);
                 break;
             case FORBIDDEN:
-                ce = new CustomBadRequestException(dm);
+                ce = new CustomForbiddenException(dm);
                 ce.setHttpStatus(HttpStatus.FORBIDDEN);
                 break;
             case NOT_FOUND:
-                ce = new CustomBadRequestException(dm);
+                ce = new CustomNotFoundException(dm);
                 ce.setHttpStatus(HttpStatus.NOT_FOUND);
                 break;
             case BUSINESS:
