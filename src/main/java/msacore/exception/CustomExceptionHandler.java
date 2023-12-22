@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0
  */
 @ControllerAdvice(annotations = RestController.class)
+@RestController
 public class CustomExceptionHandler {
 
     @ResponseStatus(HttpStatus.OK)
