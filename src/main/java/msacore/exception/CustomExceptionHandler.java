@@ -29,6 +29,30 @@ public class CustomExceptionHandler {
         return createCustomError(cbre);
     }
 
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(CustomUnauthorizedException.class)
+    public Response<?> handleException(CustomUnauthorizedException cue){
+        return createCustomError(cue);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @ExceptionHandler(CustomNotFoundException.class)
+    public Response<?> handleException(CustomNotFoundException cnfe){
+        return createCustomError(cnfe);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @ExceptionHandler(CustomForbiddenException.class)
+    public Response<?> handleException(CustomForbiddenException cfe){
+        return createCustomError(cfe);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @ExceptionHandler(CustomBusinessException.class)
+    public Response<?> handleException(CustomBusinessException cbe){
+        return createCustomError(cbe);
+    }
+
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(Exception.class)
     public Response<?> handleException(Exception e){
